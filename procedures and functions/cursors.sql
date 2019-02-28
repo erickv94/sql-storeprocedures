@@ -3,7 +3,7 @@ returns setof payment
 as
 $$
 declare
-fila payment%rowtype;
+fila payment%rowtype; --copia la estructura, para poder interarla
 begin
     for fila in select * from payment loop
         fila.amount=fila.amount-fila.amount*0.2; --descuento de 20%
